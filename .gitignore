@@ -1,11 +1,17 @@
+# Python
 __pycache__/
-*.py[cod]
-.ipynb_checkpoints/
-.DS_Store
-.env
-venv/
-.venv/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.pytest_cache/
 
-# models/
-# app/static/uploads/
-# reports/*.png
+# Virtual envs
+venv/
+.env/
+.nn_env/
+nn_env/
+
+# OS/editor
+.DS_Store
+.vscode/

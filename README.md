@@ -1,13 +1,12 @@
-# Fashion-MNIST CNN (Keras/TensorFlow)
+# Fashion Image Recognition — Vanilla MLP (Keras + TensorFlow)
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![CI](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
 
-A clean, reproducible implementation of a CNN on the Fashion‑MNIST dataset using Keras.
-Includes a notebook for exploration and a scriptable training pipeline for quick runs, plus
-figures and saved models for easy showcasing on GitHub.
+A basic, learning-focused project that trains a vanilla fully-connected neural network (MLP) to classify Fashion-MNIST clothing images. The goal is to understand the end-to-end workflow (data → model → training → inference → simple Flask UI) with a straightforward baseline before trying CNNs
+
 
 ## ✨ Highlights
 - Minimal, well‑commented **Keras CNN** baseline
