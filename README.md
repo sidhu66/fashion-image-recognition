@@ -3,84 +3,91 @@
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![CI](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
+[![CI](https://github.com/sidhu66/fashion-image-recognition/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
 
-A basic, learning-focused project that trains a vanilla fully-connected neural network (MLP) to classify Fashion-MNIST clothing images. The goal is to understand the end-to-end workflow (data → model → training → inference → simple Flask UI) with a straightforward baseline before trying CNNs
+A basic, learning-focused project that trains a vanilla fully-connected neural network (MLP) to classify Fashion-MNIST clothing images.  
+The goal is to understand the full workflow — data preprocessing → training → saving → deployment — with a simple baseline before moving to CNNs.
 
+---
+
+## 🧪 Status: Work in Progress
+
+This project is still evolving as I learn. It currently uses a simple **vanilla MLP** (not a CNN), so accuracy is not perfect.  
+But that's the point — the current model is a baseline to help me understand the end-to-end ML + deployment pipeline.
+
+I plan to update this with better models (CNNs, regularization, etc.) as I progress.
+
+---
+
+## 🌐 Live Demo
+
+🚀 Try it out:  
+**[https://fashion-karanveer.onrender.com](https://fashion-karanveer.onrender.com)**  
+(hosted on [Render.com](https://render.com))  
+Upload a test image and see what the model predicts!
+
+---
 
 ## ✨ Highlights
-- Minimal, well‑commented **Keras CNN** baseline
-- Reproducible training via a **single command**
-- Exports **training curves**, **confusion matrix**, and **sample predictions**
-- Ready‑to‑use **GitHub Actions CI** to smoke‑test the code
-- Clear project structure and **MIT license**
 
-## 🗂️ Project structure
-```
-.
-├─ assets/                # saved plots & figures (auto-created)
-├─ models/                # saved models (auto-created)
+- Simple, well-commented **Keras MLP** baseline
+- Fully reproducible training script
+- Auto-saves model + plots
+- Deployed via **Flask** + **Gunicorn**
+- Ready-to-use **CI badge** with GitHub Actions
+- MIT Licensed
+
+---
+
+## 🗂️ Project Structure
+
+├─ app/ 
+| ├─app.py
+| ├─static
+| |  └─uploads
+| └─templates
+|    └─index.html
+├─ models/ # saved models (auto-created)
 ├─ notebooks/
-│  └─ MNIST_Fashion_Project.ipynb   # your original notebook goes here
+│ └─ MNIST_Fashion_Project.ipynb # original notebook
 ├─ src/
-│  ├─ train.py            # train & export artifacts
-│  └─ infer.py            # quick inference on a few samples
-├─ .github/workflows/ci.yml
+│ ├─ inference # model training script
+│ └─ models # model inference script
+| └─ training
+| 
 ├─ .gitignore
 ├─ LICENSE
 ├─ requirements.txt
 └─ README.md
-```
 
-## 🚀 Quickstart
-```bash
-# 1) Create & activate a virtualenv (macOS/Linux)
-python3 -m venv .venv
-source .venv/bin/activate
-
-# 2) Install deps
-pip install -r requirements.txt
-
-# 3) Train (saves model + plots into ./models and ./assets)
-python src/train.py --epochs 10 --batch-size 128 --model-path models/fashion_mnist_cnn.keras
-```
-
-To run the simple inference demo (prints predicted labels for a few test images and saves a grid figure):
-```bash
-python src/infer.py --model-path models/fashion_mnist_cnn.keras
-```
-
-## 📊 Results (baseline)
-> Update with your actual run numbers and images!
-- Test accuracy: **~0.90–0.92** (typical baseline)
-- Artifacts:
-  - `assets/training_curves.png`
-  - `assets/confusion_matrix.png`
-  - `assets/sample_predictions.png`
-
-## 📝 Using the notebook
-Place your notebook at: `notebooks/MNIST_Fashion_Project.ipynb`. Keep both the notebook and
-the script so recruiters can see **exploration** *and* **productionized** code.
-
-## 🧪 CI
-A minimal GitHub Actions workflow runs lint + a quick import check so your repo shows a green badge.
-
-## 📦 Environment
-See `requirements.txt`. If you prefer, export an exact lockfile:
-```bash
-pip freeze > requirements.lock.txt
-```
-
-## 📜 License
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-### 🧭 What to showcase on GitHub
-- Clear README with **what/why/how**, results, and a couple of figures
-- Short, readable **source files** (under `src/`)
-- **Notebook** for exploration
-- **Badges** (CI, license, Python version)
-- Optional: link to a short blog post/Gist explaining your choices
+## 🚀 Quickstart
 
-> If you find this useful, ⭐ the repo!
+```bash
+# Create & activate virtualenv
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+# Train model
+python src/train.py --epochs 10 
+
+# Run inference
+python src/infer.py --image image.jpg
+
+
+# To run the Flask app locally:
+gunicorn app.app:app --bind 0.0.0.0:8000
+```
+
+## 🙋‍♂️ Want to Help or Learn More?
+
+⭐ this repo if it helped you learn too
+
+Fork it and try adding a CNN, dropout, or batch normalization
+
+Reach out on GitHub if you have ideas to improve this further
