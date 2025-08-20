@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fashion Image Recognition</title>
+
+    <!-- Tailwind CSS (CDN for quick setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: tweak Tailwind config on the fly -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        'card': '0 8px 24px rgba(0,0,0,0.08)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <h1 class="text-3xl font-semibold tracking-tight">Fashion Image Recognition</h1>
+        <p class="text-slate-600 mt-1">Upload a clothing image and the model will predict its category.</p>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="mt-4 rounded-xl border border-yellow-200 bg-yellow-50 text-yellow-800 p-4">
+            {% for message in messages %}
+            <p class="text-sm">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('handle_predict') }}" method="post" enctype="multipart/form-data"
+            class="mt-6 bg-white rounded-2xl shadow-card p-5">
+            <label class="block text-sm font-medium text-slate-700 mb-2">Choose an image</label>
+            <input type="file" name="image" accept="image/*" required class="block w-full text-sm text-slate-700
+                 file:mr-4 file:py-2 file:px-4
+                 file:rounded-md file:border-0
+                 file:text-sm file:font-medium
+                 file:bg-slate-100 file:text-slate-700
+                 hover:file:bg-slate-200" />
+            <button type="submit"
+                class="mt-4 inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-white text-sm font-medium hover:bg-slate-800 active:scale-[.99] transition">
+                Predict
+            </button>
+        </form>
+
+        {% if result %}
+        <section class="mt-6 bg-white rounded-2xl shadow-card p-5">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xl font-semibold">
+                    Prediction:
+                    <span
+                        class="ml-2 inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-indigo-800 text-sm">
+                        {{ result.best }}
+                    </span>
+                </h2>
+            </div>
+
+            <div class="mt-4 flex items-start gap-6">
+                <div class="shrink-0">
+                    <img src="{{ result.url }}" alt="{{ result.filename }}"
+                        class="h-48 w-auto rounded-xl border border-slate-100 object-contain bg-slate-50" />
+                    <p class="mt-2 text-xs text-slate-500 break-all">{{ result.filename }}</p>
+                </div>
+
+                <div class="grow">
+                    <h3 class="text-sm font-medium text-slate-700">Top-3</h3>
+                    <ul class="mt-2 space-y-1">
+                        {% for r in result.topk %}
+                        <li
+                            class="flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                            <span class="text-slate-800">{{ r.label }}</span>
+                            <span class="text-slate-600 text-sm">
+                                {{ (r.score * 100) | round(2) }}%
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</body>
+
+</html>
