@@ -45,7 +45,7 @@ Upload a test image and see what the model predicts!
 │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/app/static">static/</a> 
 │ │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/app/static/uploads">uploads/</a> # Uploaded image storage 
 │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/models/app/templates">templates/</a> 
-│ | └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/templates/index.html">index.html</a> # Web interface 
+│   └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/templates/index.html">index.html</a> # Web interface 
 ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/models">models/</a> # Saved models (auto-created) 
 ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/notebooks">notebooks/</a> 
 │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/notebooks/MNIST_Fashion_Project.ipynb">MNIST_Fashion_Project.ipynb</a> # Original notebook 
