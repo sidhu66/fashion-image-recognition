@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![CI](https://github.com/sidhu66/fashion-image-recognition/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
+
 
 A basic, learning-focused project that trains a vanilla fully-connected neural network (MLP) to classify Fashion-MNIST clothing images.  
 The goal is to understand the full workflow — data preprocessing → training → saving → deployment — with a simple baseline before moving to CNNs.
@@ -22,7 +22,7 @@ I plan to update this with better models (CNNs, regularization, etc.) as I progr
 ## 🌐 Live Demo
 
 🚀 Try it out:  
-**[https://fashion-karanveer.onrender.com](https://fashion-karanveer.onrender.com)**  
+**[https://fashion-karanveer.onrender.com](https://fashion-image-recognition.onrender.com/)**  
 (hosted on [Render.com](https://render.com))  
 Upload a test image and see what the model predicts!
 
@@ -34,31 +34,12 @@ Upload a test image and see what the model predicts!
 - Fully reproducible training script
 - Auto-saves model + plots
 - Deployed via **Flask** + **Gunicorn**
-- Ready-to-use **CI badge** with GitHub Actions
-- MIT Licensed
+
 
 ---
 
 ## 🗂️ Project Structure
-
-├─ app/ 
-| ├─app.py
-| ├─static
-| |  └─uploads
-| └─templates
-|    └─index.html
-├─ models/ # saved models (auto-created)
-├─ notebooks/
-│ └─ MNIST_Fashion_Project.ipynb # original notebook
-├─ src/
-│ ├─ inference # model training script
-│ └─ models # model inference script
-| └─ training
-| 
-├─ .gitignore
-├─ LICENSE
-├─ requirements.txt
-└─ README.md
+<pre> . ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/app">app/</a> │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/app.py">app.py</a> # Flask entry point │ ├── static/ │ │ └── uploads/ # Uploaded image storage │ └── templates/ │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/templates/index.html">index.html</a> # Web interface │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/models">models/</a> # Saved models (auto-created) │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/notebooks">notebooks/</a> │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/notebooks/MNIST_Fashion_Project.ipynb">MNIST_Fashion_Project.ipynb</a> # Original notebook │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src">src/</a> │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/inference">inference/</a> # Inference logic │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/training">training/</a> # Training logic │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/.gitignore">.gitignore</a> ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/LICENSE">LICENSE</a> ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/requirements.txt">requirements.txt</a> └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/README.md">README.md</a> </pre>
 
 
 ---
