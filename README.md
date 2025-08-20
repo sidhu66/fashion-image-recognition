@@ -39,7 +39,20 @@ Upload a test image and see what the model predicts!
 ---
 
 ## 🗂️ Project Structure
-<pre> . ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/app">app/</a> │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/app.py">app.py</a> # Flask entry point │ ├── static/ │ │ └── uploads/ # Uploaded image storage │ └── templates/ │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/templates/index.html">index.html</a> # Web interface │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/models">models/</a> # Saved models (auto-created) │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/notebooks">notebooks/</a> │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/notebooks/MNIST_Fashion_Project.ipynb">MNIST_Fashion_Project.ipynb</a> # Original notebook │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src">src/</a> │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/inference">inference/</a> # Inference logic │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/training">training/</a> # Training logic │ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/.gitignore">.gitignore</a> ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/LICENSE">LICENSE</a> ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/requirements.txt">requirements.txt</a> └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/README.md">README.md</a> </pre>
+<pre> . 
+├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/app">app/</a> 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/app.py">app.py</a> # Flask entry point 
+│ ├── static/ │ │ └── uploads/ # Uploaded image storage 
+│ └── templates/ │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/app/templates/index.html">index.html</a> # Web interface 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/models">models/</a> # Saved models (auto-created) 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/notebooks">notebooks/</a> │ └── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/notebooks/MNIST_Fashion_Project.ipynb">MNIST_Fashion_Project.ipynb</a> # Original notebook 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src">src/</a> 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/inference">inference/</a> # Inference logic 
+│ └── <a href="https://github.com/sidhu66/fashion-image-recognition/tree/main/src/training">training/</a> # Training logic 
+│ ├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/.gitignore">.gitignore</a> 
+├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/LICENSE">LICENSE</a> 
+├── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/requirements.txt">requirements.txt</a> 
+└── <a href="https://github.com/sidhu66/fashion-image-recognition/blob/main/README.md">README.md</a> </pre>
 
 
 ---
